@@ -21,7 +21,7 @@ def get_memory(session_id: str) -> ConversationBufferMemory:
     """
     if session_id not in _session_memories:
         _session_memories[session_id] = ConversationBufferMemory(
-            memory_key="chat_history",
+            memory_key="history",
             return_messages=True
         )
         print(f"✅ New session created: {session_id}")
