@@ -1,0 +1,16 @@
+# docker-compose.yml
+# Run the app with one command: docker-compose up
+# Concept: docker-compose — manages app + environment variables together
+
+version: '3.8'
+
+services:
+  ai-chat-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - .:/app
+    restart: unless-stopped
